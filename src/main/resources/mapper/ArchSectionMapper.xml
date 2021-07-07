@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhangzixiang.bridge.dao.ArchSectionMapper">
+    <select id="findArchSectionList" resultType="com.zhangzixiang.bridge.model.ArchSectionOutVo">
+        SELECT
+            section_id,
+            section_name
+        FROM
+            arch_asset a
+        WHERE
+            a.type_id = #{typeId}
+        GROUP BY
+            section_name
+    </select>
+</mapper>
